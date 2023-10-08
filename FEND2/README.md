@@ -4,3 +4,6 @@ AC(GrandParentComponent/App-component)-->FC(ParentComponent/Function-component)-
 use of 'useState' for re-rendering of local variables.
 (so, that values can be rendered without reloading the page)
 App.css for styling the page 
+
+
+necessary packages will be in ./FendPkg
