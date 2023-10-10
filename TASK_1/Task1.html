@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <center>
+        <h1 style="font-size: 50px; color: white;"> Veer Surendra Sai University of Technology </h1>
+        <table>
+            <form>
+                <tr>
+                    <td class="input-box1">Name:<input type="text" name="name" placeholder="Enter Name" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="input-box2">Password:<input type="password" name="pass" placeholder="Enter Password" id="password" required>
+                        <img src="eye-close.png" id="eyeicon"></td>
+                    </td>
+                </tr>
+                <script>
+                    let eyeicon = document.getElementById("eyeicon");
+                    let password = document.getElementById("password");
+                
+                    eyeicon.onclick = function(){
+                        if(password.type == "password"){
+                            password.type = "text";
+                            eyeicon.src = "eye-open.png"
+                        }else{
+                            password.type = "password";
+                            eyeicon.src = "eye-close.png"
+                        }
+                    }
+                </script>
+            </form>
+        </table>
+    </center>
+</body>
+</html>
