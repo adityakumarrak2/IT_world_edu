@@ -1,0 +1,64 @@
+import "./App.css"
+import { useState } from "react"
+
+export const App=()=>{
+
+    const [num,setNum]=useState(0);
+    const handleAdd=()=>{ setNum(num+1) }
+    const handleSub=()=>{ setNum(num-1) }
+
+    return(
+        <div className="app">
+            <div className="box">
+            <h1>{num}</h1>
+            <button type="button" className="btn btn-primary" onClick={handleAdd}>Add</button>
+            <button type="button" className="btn btn-danger" onClick={handleSub}>Sub</button>
+            </div>
+        </div>
+    );
+}
+
+
+import "./App.css"
+import { useState } from "react";
+
+export const App = () => {
+
+    const [Name,setName]=useState("");
+    const [list,setList]=useState([]);
+
+    const createList=(e)=>{
+        e.preventDefault();
+        setList([...list,{id: list.length, names:Name}]);
+        setName("");
+    }
+    
+
+  return (
+    <div>
+        <div className="app">
+            <div className="box">
+                <form className="form-group"
+                onSubmit={createList}>
+                    <label>Enter Name</label>
+                    <input type="text" className="form-control"
+                    value={Name} onChange={(e)=>{setName(e.target.value)}}/>
+                    <button className="btn btn-primary mt-2">Submit</button>
+                </form>                
+            </div>
+            <div className="box">
+                <h5>List Items</h5>
+                <ul className="list-group">
+                    {
+                        list.map((item,index)=>{
+                            return(<li key={index} className="list-group-item">
+                                {item.names}
+                                </li>);
+                        })
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+  )
+}
